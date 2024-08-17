@@ -1,0 +1,129 @@
+:root {
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+    --Font-size: 13px;
+    --Font-family: sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: var(--Font-family);
+    background-color: var(--Light-Grayish-Blue);
+}
+
+.product {
+    display: flex;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.product .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% + 100px);
+}
+
+.product .img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+}
+
+.product .articleInfo {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+    gap: 10px;
+}
+
+.product .articleInfo h3 {
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+.product .articleInfo h3 + p {
+    color: var(--Desaturated-Dark-Blue);
+}
+
+.product .articleInfo span {
+    color: var(--Grayish-Blue);
+}
+
+.product .articleInfo .userInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--Light-Grayish-Blue);
+    padding-block: 10px;
+}
+
+.product .articleInfo .userInfo .pic {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product .articleInfo .userInfo .pic img {
+    width: 70px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.product .articleInfo .userInfo .share {
+    cursor: pointer;
+    position: relative;
+}
+
+.product .articleInfo .userInfo .share .shareInfo {
+    display: none;
+}
+
+.product .articleInfo .userInfo .share.active .shareInfo {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 7px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+
+.product .articleInfo .userInfo .share.active .shareInfo p {
+    font-weight: bold;
+}
+
+/* استعلام وسائل الإعلام للموبايل */
+@media (max-width: 740px) {
+    .product {
+        flex-direction: column;
+        max-width: 90%;
+    }
+
+    .product .img {
+        width: 100%;
+    }
+
+    .product .img img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px 5px 0 0;
+    }
+}
